@@ -24,7 +24,7 @@ const QuoteButton=styled.input`
     }
 `
 
-const Form = () => {
+const Form = ({setCoin}) => {
 
   const [cryptos, setCryptos] = useState([])
   const [error, setError] = useState(false)
@@ -56,6 +56,10 @@ const Form = () => {
       return
     }
     setError(false)
+    setCoin({
+      selectedCurrency,
+      selectedCrypto
+    })
   }
 
   return (
